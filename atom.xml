@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>听到涛声</title>
+  
+  <subtitle>起风了，唯有努力生存！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://aprilviolet.github.io/"/>
+  <updated>2019-11-05T09:00:46.032Z</updated>
+  <id>http://aprilviolet.github.io/</id>
+  
+  <author>
+    <name>AprilViolet</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试文章1</title>
+    <link href="http://aprilviolet.github.io/2019/11/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A01/"/>
+    <id>http://aprilviolet.github.io/2019/11/02/测试文章1/</id>
+    <published>2019-11-02T14:04:50.000Z</published>
+    <updated>2019-11-05T09:00:46.032Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="这是测试文件"><a href="#这是测试文件" class="headerlink" title="这是测试文件"></a>这是测试文件</h1><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><p>这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p> <a id="more"></a> <p> 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </p><h2 id="标题2-1"><a href="#标题2-1" class="headerlink" title="标题2.1"></a>标题2.1</h2><p> 博客内容可以轻松打包、转移、发布到其它平台； </p><h3 id="标题3-1"><a href="#标题3-1" class="headerlink" title="标题3"></a>标题3</h3><h4 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hexo.extend.helper.register(<span class="hljs-string">'has_column'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">position</span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">const</span> getWidgets = hexo.extend.helper.get(<span class="hljs-string">'get_widgets'</span>).bind(<span class="hljs-keyword">this</span>);</span><br><span class="line">        <span class="hljs-keyword">return</span> getWidgets(position).length &gt; <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    hexo.extend.helper.register(<span class="hljs-string">'column_count'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> columns = <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">const</span> hasColumn = hexo.extend.helper.get(<span class="hljs-string">'has_column'</span>).bind(<span class="hljs-keyword">this</span>);</span><br><span class="line">        columns += hasColumn(<span class="hljs-string">'left'</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;</span><br><span class="line">        columns += hasColumn(<span class="hljs-string">'right'</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> columns;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      这是用来测试的文件1
+    
+    </summary>
+    
+    
+      <category term="测试1" scheme="http://aprilviolet.github.io/categories/%E6%B5%8B%E8%AF%951/"/>
+    
+    
+      <category term="标签1" scheme="http://aprilviolet.github.io/tags/%E6%A0%87%E7%AD%BE1/"/>
+    
+      <category term="标签3" scheme="http://aprilviolet.github.io/tags/%E6%A0%87%E7%AD%BE3/"/>
+    
+  </entry>
+  
+</feed>
