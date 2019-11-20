@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aprilviolet.github.io/"/>
-  <updated>2019-11-05T09:00:46.032Z</updated>
+  <updated>2019-11-20T10:58:04.969Z</updated>
   <id>http://aprilviolet.github.io/</id>
   
   <author>
@@ -17,27 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试文章1</title>
-    <link href="http://aprilviolet.github.io/2019/11/02/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A01/"/>
-    <id>http://aprilviolet.github.io/2019/11/02/测试文章1/</id>
+    <title>万物之始</title>
+    <link href="http://aprilviolet.github.io/2019/11/02/%E4%B8%87%E7%89%A9%E4%B9%8B%E5%A7%8B/"/>
+    <id>http://aprilviolet.github.io/2019/11/02/万物之始/</id>
     <published>2019-11-02T14:04:50.000Z</published>
-    <updated>2019-11-05T09:00:46.032Z</updated>
+    <updated>2019-11-20T10:58:04.969Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="这是测试文件"><a href="#这是测试文件" class="headerlink" title="这是测试文件"></a>这是测试文件</h1><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><p>这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p><h3 id="标题3"><a href="#标题3" class="headerlink" title="标题3"></a>标题3</h3><p>这是测试文件这是测试文件这是测试文件这是测试文件这是测试文件</p> <a id="more"></a> <p> 数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行； </p><h2 id="标题2-1"><a href="#标题2-1" class="headerlink" title="标题2.1"></a>标题2.1</h2><p> 博客内容可以轻松打包、转移、发布到其它平台； </p><h3 id="标题3-1"><a href="#标题3-1" class="headerlink" title="标题3"></a>标题3</h3><h4 id="代码测试"><a href="#代码测试" class="headerlink" title="代码测试"></a>代码测试</h4><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">hexo.extend.helper.register(<span class="hljs-string">'has_column'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">position</span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">const</span> getWidgets = hexo.extend.helper.get(<span class="hljs-string">'get_widgets'</span>).bind(<span class="hljs-keyword">this</span>);</span><br><span class="line">        <span class="hljs-keyword">return</span> getWidgets(position).length &gt; <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    hexo.extend.helper.register(<span class="hljs-string">'column_count'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> columns = <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">const</span> hasColumn = hexo.extend.helper.get(<span class="hljs-string">'has_column'</span>).bind(<span class="hljs-keyword">this</span>);</span><br><span class="line">        columns += hasColumn(<span class="hljs-string">'left'</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;</span><br><span class="line">        columns += hasColumn(<span class="hljs-string">'right'</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> columns;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="喜大普奔-博客上线"><a href="#喜大普奔-博客上线" class="headerlink" title="喜大普奔 博客上线"></a>喜大普奔 博客上线</h1><p>从大四下学期的十月底开始捣鼓这个博客，到现在也快一个月了，中途因为校招找工作耽误了许久，终于还是被我捣鼓出来了。说实在的中途也想要过放弃不弄了(≧﹏ ≦)因为中途的一些事情，但是最终还是坚持下去，把博客上线了。未来或许会经常更新或许不会经常更新，但是我一直都在，有任何问题您可以联系我</p><a id="more"></a><h1 id="想说的一些话"><a href="#想说的一些话" class="headerlink" title="想说的一些话"></a>想说的一些话</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>最初就一直想有一个可以记录学习历程的地方，虽然自己也都有记笔记，但是笔记和写博客还是有区别的。当然我的博客也不仅仅是写一些自己的学习，也不仅仅是计算机编程方面的学习，也会记录一些自己的生活日常，可以说是自己的一个写日记日志之类的地方把，只不过是分享出去，哈哈O(∩_∩)O</p><h2 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h2><p>道理都是长大了才懂，我们大多数人都只是一个平凡人，一个普通人。但是也不要去轻易否定自己，他人并不是你的什么人，何必去理会他们。</p><hr><blockquote><p>不要在晚上考虑事情，晚上是感性的，让自己理性一点</p></blockquote><blockquote><p>平凡的世界平凡的我做着平凡活在平凡的世界</p></blockquote><p>​                                                            二〇一九年十一月二十日 18:57</p>]]></content>
     
     <summary type="html">
     
-      这是用来测试的文件1
+      这是建立博客的第一篇文章!
     
     </summary>
     
     
-      <category term="测试1" scheme="http://aprilviolet.github.io/categories/%E6%B5%8B%E8%AF%951/"/>
+      <category term="记录" scheme="http://aprilviolet.github.io/categories/%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="标签1" scheme="http://aprilviolet.github.io/tags/%E6%A0%87%E7%AD%BE1/"/>
-    
-      <category term="标签3" scheme="http://aprilviolet.github.io/tags/%E6%A0%87%E7%AD%BE3/"/>
+      <category term="万物之始" scheme="http://aprilviolet.github.io/tags/%E4%B8%87%E7%89%A9%E4%B9%8B%E5%A7%8B/"/>
     
   </entry>
   
