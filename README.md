@@ -1,4 +1,4 @@
-# 个人博客
+# 一个卑微的面向二次元编程的个人博客
 
 ## 关于本站
 
@@ -6,5 +6,5 @@
 
 **本站概括：**本站目前基于[hexo]( https://hexo.io/zh-cn/ )搭建，采用的是[Icarus]( https://blog.zhangruipeng.me/hexo-theme-icarus/ )主题。发布在GitHub，使用GitHubPage自动部署静态网页。
 
-**联系方式**:您可以给我发邮件:AprilEternityLT@163.com，或者访问我的[个人博客](https://aprilviolet.github.io/)并给我留言。
+**联系方式：**您可以给我发邮件:AprilEternityLT@163.com，或者访问我的[个人博客](https://aprilviolet.github.io/)并给我留言。
 
