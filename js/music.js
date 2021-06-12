@@ -1,1 +1,55 @@
-"use strict";var lastIndex,musicJsons;function playMusic(s,c){mePlayer({theme:"default",music:s,target:".music",autoplay:!1},function(){var s;(s=lastIndex+1)>=musicJsons.length&&(s=0),playMusic(musicJsons[s]),$("#musiclist #"+lastIndex).css("color","#888888"),$("#musiclist #"+s).css("color","#3273dc"),lastIndex=s,mePlayerMethod.play()});var t=s.desc;null==t?$("#desc").html(""):$("#desc").html("<blockquote>"+t+"</blockquote>")}$.getJSON("../data/music.json",function(s){musicJsons=s;for(var c=0;c<musicJsons.length;c++){musicJsons[c].loop=!1;var t=$("<li><span>"+musicJsons[c].title+"</span>&nbsp;&nbsp;&nbsp;&nbsp;时长："+musicJsons[c].time+"&nbsp;&nbsp;&nbsp;&nbsp; 歌手："+musicJsons[c].author+"</li>");t.attr("id",c),t.css("list-style-type","none"),t.css("height","40px"),t.css("color","#888888"),t.click(function(s){var c=Number(this.id);playMusic(musicJsons[c]),$("#musiclist #"+lastIndex).css("color","#888888"),$(this).css("color","#3273dc"),lastIndex=c,mePlayerMethod.play()}),$("#musiclist").append(t)}var l=Math.floor(Math.random()*musicJsons.length);$("#musiclist #"+l).css("color","#3273dc"),playMusic(musicJsons[lastIndex=l])});
+// 音乐处理
+var lastIndex;
+var musicJsons;
+$.getJSON("../data/music.json", function (data) {
+    musicJsons = data;
+    for (var i = 0; i < musicJsons.length; i++) {
+        musicJsons[i].loop = false;
+        var $li = $('<li><span>' + musicJsons[i].title + '</span>&nbsp;&nbsp;&nbsp;&nbsp;时长：' + musicJsons[i].time + '&nbsp;&nbsp;&nbsp;&nbsp; 歌手：' + musicJsons[i].author + '</li>')
+        $li.attr('id', i);
+        $li.css('list-style-type', 'none');
+        $li.css('height', '40px');
+        $li.css('color', '#888888');
+        $li.click(function (event) {
+            var id = Number(this.id);
+            playMusic(musicJsons[id]);
+            $('#musiclist #' + lastIndex).css('color', '#888888');
+            $(this).css('color', '#3273dc');
+            lastIndex = id;
+            mePlayerMethod.play();
+        });
+        var $musiclist = $('#musiclist');
+        $musiclist.append($li);
+    }
+
+    var index = Math.floor(Math.random() * musicJsons.length);
+    $('#musiclist #' + index).css('color', '#3273dc');
+    lastIndex = index;
+    playMusic(musicJsons[index]);
+});
+
+function playMusic(data, playendcallback) {
+    mePlayer({
+        theme: 'default',
+        music: data,
+        target: '.music',
+        autoplay: false
+    }, function () {
+        var index;
+        index = lastIndex + 1;
+        if (index >= musicJsons.length) {
+            index = 0;
+        }
+        playMusic(musicJsons[index]);
+        $('#musiclist #' + lastIndex).css('color', '#888888');
+        $('#musiclist #' + index).css('color', '#3273dc');
+        lastIndex = index;
+        mePlayerMethod.play();
+    });
+    var descr = data.desc;
+    if (descr == undefined) {
+        $('#desc').html("");
+    } else {
+        $('#desc').html("<blockquote>" + descr + "</blockquote>");
+    }
+}

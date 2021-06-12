@@ -1,1 +1,149 @@
-"use strict";function _createForOfIteratorHelper(t){if("undefined"==typeof Symbol||null==t[Symbol.iterator]){if(Array.isArray(t)||(t=_unsupportedIterableToArray(t))){var e=0,a=function(){};return{s:a,n:function(){return e>=t.length?{done:!0}:{done:!1,value:t[e++]}},e:function(t){throw t},f:a}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var i,r,n=!0,s=!1;return{s:function(){i=t[Symbol.iterator]()},n:function(){var t=i.next();return n=t.done,t},e:function(t){s=!0,r=t},f:function(){try{n||null==i.return||i.return()}finally{if(s)throw r}}}}function _unsupportedIterableToArray(t,e){if(t){if("string"==typeof t)return _arrayLikeToArray(t,e);var a=Object.prototype.toString.call(t).slice(8,-1);return"Object"===a&&t.constructor&&(a=t.constructor.name),"Map"===a||"Set"===a?Array.from(a):"Arguments"===a||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(a)?_arrayLikeToArray(t,e):void 0}}function _arrayLikeToArray(t,e){(null==e||e>t.length)&&(e=t.length);for(var a=0,i=new Array(e);a<e;a++)i[a]=t[a];return i}!function(i){function t(){var t=i(".navbar-main .navbar-start").outerWidth()+i(".navbar-main .navbar-end").outerWidth();i(document).outerWidth()<t?i(".navbar-main .navbar-menu").addClass("is-flex-start"):i(".navbar-main .navbar-menu").removeClass("is-flex-start")}if(i('.article img:not(".not-gallery-item")').each(function(){0===i(this).parent("a").length&&(i(this).wrap('<a class="gallery-item" href="'+i(this).attr("src")+'"></a>'),this.alt&&i(this).after('<div class="has-text-centered is-size-6 has-text-grey caption">'+this.alt+"</div>"))}),i(".article > .content > table").each(function(){i(this).width()>i(this).parent().width()&&i(this).wrap('<div class="table-overflow"></div>')}),t(),i(window).resize(t),i("figure.highlight table").wrap('<div class="highlight-body">'),"undefined"!=typeof IcarusThemeSettings&&void 0!==IcarusThemeSettings.article&&void 0!==IcarusThemeSettings.article.highlight){i("figure.highlight").addClass("hljs"),i("figure.highlight .code .line span").each(function(){var t=i(this).attr("class").split(/\s+/);1===t.length&&(i(this).addClass("hljs-"+t[0]),i(this).removeClass(t[0]))}),"undefined"!=typeof ClipboardJS&&IcarusThemeSettings.article.highlight.clipboard&&(i("figure.highlight").each(function(){var t="code-"+Date.now()+(1e3*Math.random()|0),e='<a href="javascript:;" class="copy" title="Copy" data-clipboard-target="#'+t+' .code"><i class="fas fa-copy"></i></a>';i(this).attr("id",t),i(this).find("figcaption").length?i(this).find("figcaption").prepend(e):i(this).prepend("<figcaption>"+e+"</figcaption>")}),new ClipboardJS(".highlight .copy"));var e=IcarusThemeSettings.article.highlight.fold;if(e.trim()){var a=function(t,e){var a=i(t).find(".fold i");e?i(t).addClass("folded"):i(t).removeClass("folded"),e?a.removeClass("fa-angle-down"):a.removeClass("fa-angle-right"),e?a.addClass("fa-angle-right"):a.addClass("fa-angle-down")},r='<span class="fold">'+("unfolded"===e?'<i class="fas fa-angle-down"></i>':'<i class="fas fa-angle-right"></i>')+"</span>";i("figure.highlight").each(function(){i(this).find("figcaption").length?i(this).find("figcaption").prepend(r):i(this).prepend("<figcaption>"+r+"</figcaption>")}),i("figure.highlight").each(function(){a(this,"folded"===e)}),i("figure.highlight figcaption .fold").click(function(){var t=i(this).closest("figure.highlight");a(t.eq(0),!t.hasClass("folded"))})}}var n=i("#toc");if(0<n.length){var s=function(){n.toggleClass("is-active"),o.toggleClass("is-active")},o=i("<div>");o.attr("id","toc-mask"),i("body").append(o),n.on("click",s),o.on("click",s),i(".navbar-main .catalogue").on("click",s)}"undefined"!=typeof IcarusThemeSettings&&void 0!==IcarusThemeSettings.site.url&&void 0!==IcarusThemeSettings.site.external_link&&IcarusThemeSettings.site.external_link.enable&&i(".article .content a").filter(function(t,e){return e.href&&!i(e).attr("href").startsWith("#")&&0===e.classList.length&&function(t,e,a){try{e=new URL(e).hostname}catch(t){}if(!e)return!1;var i=new URL(t,"http://"+e);if("null"===i.origin)return!1;var r=i.hostname;if((a=a&&(Array.isArray(a)?a:[a]))&&a.length){var n,s=_createForOfIteratorHelper(a);try{for(s.s();!(n=s.n()).done;){if(r===n.value)return!1}}catch(t){s.e(t)}finally{s.f()}}return r!==e}(e.href,IcarusThemeSettings.site.url,IcarusThemeSettings.site.external_link.exclude)}).each(function(t,e){e.relList.add("noopener"),e.target="_blank"})}(jQuery);
+(function ($) {
+    $('.article img:not(".not-gallery-item")').each(function () {
+        // wrap images with link and add caption if possible
+        if ($(this).parent('a').length === 0) {
+            $(this).wrap('<a class="gallery-item" href="' + $(this).attr('src') + '"></a>');
+            if (this.alt) {
+                $(this).after('<div class="has-text-centered is-size-6 has-text-grey caption">' + this.alt + '</div>');
+            }
+        }
+    });
+
+    $('.article > .content > table').each(function () {
+        if ($(this).width() > $(this).parent().width()) {
+            $(this).wrap('<div class="table-overflow"></div>');
+        }
+    });
+
+    function adjustNavbar() {
+        const navbarWidth = $('.navbar-main .navbar-start').outerWidth() + $('.navbar-main .navbar-end').outerWidth();
+        if ($(document).outerWidth() < navbarWidth) {
+            $('.navbar-main .navbar-menu').addClass('is-flex-start');
+        } else {
+            $('.navbar-main .navbar-menu').removeClass('is-flex-start');
+        }
+    }
+    adjustNavbar();
+    $(window).resize(adjustNavbar);
+
+    $('figure.highlight table').wrap('<div class="highlight-body">');
+    if (typeof (IcarusThemeSettings) !== 'undefined' &&
+        typeof (IcarusThemeSettings.article) !== 'undefined' &&
+        typeof (IcarusThemeSettings.article.highlight) !== 'undefined') {
+
+        $('figure.highlight').addClass('hljs');
+        $('figure.highlight .code .line span').each(function () {
+            const classes = $(this).attr('class').split(/\s+/);
+            if (classes.length === 1) {
+                $(this).addClass('hljs-' + classes[0]);
+                $(this).removeClass(classes[0]);
+            }
+        });
+
+        if (typeof (ClipboardJS) !== 'undefined' && IcarusThemeSettings.article.highlight.clipboard) {
+            $('figure.highlight').each(function () {
+                var id = 'code-' + Date.now() + (Math.random() * 1000 | 0);
+                var button = '<a href="javascript:;" class="copy" title="Copy" data-clipboard-target="#' + id + ' .code"><i class="fas fa-copy"></i></a>';
+                $(this).attr('id', id);
+                if ($(this).find('figcaption').length) {
+                    $(this).find('figcaption').prepend(button);
+                } else {
+                    $(this).prepend('<figcaption>' + button + '</figcaption>');
+                }
+            });
+            new ClipboardJS('.highlight .copy');
+        }
+        var fold = IcarusThemeSettings.article.highlight.fold;
+        if (fold.trim()) {
+            var button = '<span class="fold">' + (fold === 'unfolded' ? '<i class="fas fa-angle-down"></i>' : '<i class="fas fa-angle-right"></i>') + '</span>';
+            $('figure.highlight').each(function () {
+                if ($(this).find('figcaption').length) {
+                    $(this).find('figcaption').prepend(button);
+                } else {
+                    $(this).prepend('<figcaption>' + button + '</figcaption>');
+                }
+            });
+
+            function toggleFold(codeBlock, isFolded) {
+                var $toggle = $(codeBlock).find('.fold i');
+                !isFolded ? $(codeBlock).removeClass('folded') : $(codeBlock).addClass('folded');
+                !isFolded ? $toggle.removeClass('fa-angle-right') : $toggle.removeClass('fa-angle-down');
+                !isFolded ? $toggle.addClass('fa-angle-down') : $toggle.addClass('fa-angle-right');
+            }
+
+            $('figure.highlight').each(function () {
+                toggleFold(this, fold === 'folded');
+            });
+            $('figure.highlight figcaption .fold').click(function () {
+                var $code = $(this).closest('figure.highlight');
+                toggleFold($code.eq(0), !$code.hasClass('folded'));
+            });
+        }
+    }
+
+    var $toc = $('#toc');
+    if ($toc.length > 0) {
+        var $mask = $('<div>');
+        $mask.attr('id', 'toc-mask');
+
+        $('body').append($mask);
+
+        function toggleToc() {
+            $toc.toggleClass('is-active');
+            $mask.toggleClass('is-active');
+        }
+
+        $toc.on('click', toggleToc);
+        $mask.on('click', toggleToc);
+        $('.navbar-main .catalogue').on('click', toggleToc);
+    }
+
+    // hexo-util/lib/is_external_link.js
+    function isExternalLink(input, sitehost, exclude) {
+        try {
+            sitehost = new URL(sitehost).hostname;
+        } catch (e) { }
+
+        if (!sitehost) return false;
+
+        // handle relative url
+        const data = new URL(input, 'http://' + sitehost);
+
+        // handle mailto: javascript: vbscript: and so on
+        if (data.origin === 'null') return false;
+
+        const host = data.hostname;
+
+        if (exclude) {
+            exclude = Array.isArray(exclude) ? exclude : [exclude];
+
+            if (exclude && exclude.length) {
+                for (const i of exclude) {
+                    if (host === i) return false;
+                }
+            }
+        }
+
+        if (host !== sitehost) return true;
+
+        return false;
+    }
+
+    if (typeof (IcarusThemeSettings) !== 'undefined' &&
+        typeof (IcarusThemeSettings.site.url) !== 'undefined' &&
+        typeof (IcarusThemeSettings.site.external_link) !== 'undefined' &&
+        IcarusThemeSettings.site.external_link.enable) {
+        $('.article .content a').filter(function (i, link) {
+            return link.href &&
+                !$(link).attr('href').startsWith('#') &&
+                link.classList.length === 0 &&
+                isExternalLink(link.href,
+                    IcarusThemeSettings.site.url,
+                    IcarusThemeSettings.site.external_link.exclude);
+        }).each(function (i, link) {
+            link.relList.add('noopener');
+            link.target = '_blank';
+        });
+    }
+    
+})(jQuery);
